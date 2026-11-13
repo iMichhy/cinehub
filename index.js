@@ -20,7 +20,7 @@ app.use("/rooms", checkToken, roomRoutes);
 app.use("/screenings", checkToken, screeningRoutes);
 app.use("/reservations", checkToken, reservationRoutes);
  
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
     res.json({ status: "OK" });
 });
  
