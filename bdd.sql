@@ -53,7 +53,7 @@ CONSTRAINT uq_user_screening UNIQUE (re_user, re_screening)
 );
 
 INSERT INTO users (us_username, us_password, us_email, us_role) VALUES
-('admin', '$2b$10$2TLXDYwfiqdo9wFEsP.56euqkkzwrF7KyWhNU.NCyZriI5OQ9NOR2', 'admin@cinehub.fr', 'admin');
+('admin', '$2b$10$w19i6J2DssDNbIG6nlqrk.BGl28AZJATzUHhSZhqzWpg9t1mNcL7i', 'admin@cinehub.fr', 'admin');
 
 INSERT INTO films (fi_title, fi_description, fi_duration, fi_genre, fi_release_date, fi_is_showing) VALUES
 ('Inception', 'Un voleur s''infiltre dans les rêves.', 148, 'Science-fiction', '2010-07-21', 1),

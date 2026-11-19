@@ -48,7 +48,7 @@ async function getByUserAndScreening(userId, screeningId) {
 
 
 async function getSeatsTaken(screeningId) {
-    const [rows] = await Db.query("SELECT (SUM(re_seats), 0) AS taken FROM reservations WHERE re_screening = ?", [screeningId]);
+    const [rows] = await Db.query("SELECT COALESCE(SUM(re_seats), 0) AS taken FROM reservations WHERE re_screening = ?", [screeningId]);
     return Number(rows[0].taken);
 }
 
