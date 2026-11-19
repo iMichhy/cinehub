@@ -25,19 +25,25 @@ async function register(req, res) {
 async function login(req, res) {
     try {
         const body = req.body;
+
+
         if (!body.username || !body.password) {
             return res.status(403).json({ error: "Identifiants incorrect" });
         }
 
         const user = await userModel.getByUsername(body.username);
 
+
         if (!user) {
+
             return res.status(403).json({ error: "Identifiants incorrect" });
         }
 
         const passwordVerify = bcrypt.compareSync(body.password, user.us_password);
 
+
         if (!passwordVerify) {
+
             return res.status(403).json({ error: "Identifiants incorrect" });
         }
 

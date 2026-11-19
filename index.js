@@ -7,11 +7,14 @@ import filmRoutes from './Routes/films.route.js'
 import roomRoutes from './Routes/rooms.route.js'
 import screeningRoutes from './Routes/screenings.route.js'
 import reservationRoutes from './Routes/reservations.route.js'
- 
+import cors from 'cors'
+
+
 dotenv.config();
 const app = express();
  
 app.use(express.json());
+app.use(cors());
  
 app.use("/auth", authRoutes);
 app.use("/users", checkToken, userRoutes);
